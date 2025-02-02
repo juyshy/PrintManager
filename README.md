@@ -47,6 +47,11 @@ I'm a newbie with python and PyQt5 :)
 - Support native printing presets (dont know if possible)
 - ...
 
+# Fork note:
+- added requirements.txt
+- tested running on mac os with Python 3.8. 
+- remove cropmarks works!
+
 # Updates:
 0.35
 - code cleanup
