@@ -44,13 +44,17 @@ else:
 
 # extract printer info as list for preferences only
 def load_printers():
-	output = (subprocess.check_output(["/usr/bin/lpstat", "-a"]))
-	outputlist = (output.splitlines())
 	tolist = [] # novy list
-	for num in outputlist:  # prochazeni listem
-		first, *middle, last = num.split()
-		tiskarna = str(first.decode())
-		tolist.append(tiskarna)
+	try:
+		output = (subprocess.check_output(["/usr/bin/lpstat", "-a"]))
+		outputlist = (output.splitlines())
+
+		for num in outputlist:  # prochazeni listem
+			first, *middle, last = num.split()
+			tiskarna = str(first.decode())
+			tolist.append(tiskarna)
+	except Exception as e:
+			print(e)
 	return (tolist)
 
 # PREFERENCES BASIC
